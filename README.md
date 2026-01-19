@@ -1,6 +1,13 @@
-# Project
+# CPCS
 
-A small collection of Python scripts.
+The following instructions to install and run work for any CPCS Creative Task.
+
+## Apps
+
+### Unit 3
+
+- Creative Task #1 [Car Simulator](https://github.com/MrRayBob/Carnegie-Mellon-CPCS/blob/main/Car.py)
+- Creative Task #1 [Solar System Simulator](https://github.com/MrRayBob/Carnegie-Mellon-CPCS/blob/main/Solar%20System.py)
 
 ## Prerequisites
 
