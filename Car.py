@@ -52,6 +52,11 @@ def insideTrack(app):
         return True
     return False
 
+def checkPositionInisdeApp(app, position):
+    if not (0 <= position[0] <= app.width and 0 <= position[1] <= app.height):
+        return False
+    return True
+
 def takeStep(app):
     app.timeTotal += 1
     if (insideTrack(app)):
@@ -63,10 +68,14 @@ def takeStep(app):
         app.carRotation += app.rotationChange
     if app.wBeingPressed:
         newPostition = getRadiusEndpoint(app.carX, app.carY, app.dm, -app.carRotation)
+        if not checkPositionInisdeApp(app, newPostition):
+            return
         app.carX = newPostition[0]
         app.carY = newPostition[1]
     elif app.sBeingPressed:
         newPostition = getRadiusEndpoint(app.carX, app.carY, -app.dm, -app.carRotation)
+        if not checkPositionInisdeApp(app, newPostition):
+            return
         app.carX = newPostition[0]
         app.carY = newPostition[1]
     
