@@ -125,7 +125,7 @@ def redrawAll(app):
     drawLabel('Press Up/Down to change speed, P to pause/unpause', 200, 60, fill="white", bold=True, size=12)
     
     drawRect(120, 370, 110, 25, align='center', fill='black')
-    drawLabel(f"Earth Rotations PerSecond: {pythonRound(app.earthRotsASec, 2)}", 120, 370, fill='white', bold=True, size=12)
+    drawLabel(f"Sec / Earth Rotation: {pythonRound(app.earthRotsASec, 2)}", 120, 370, fill='white', bold=True, size=12)
 
 def takeStep(app):
     if not app.paused:
@@ -139,7 +139,7 @@ def takeStep(app):
             app.venusRot += (app.currentStep / app.venusOrbitTime) * 360 - app.venusRot
             app.earthRot += (app.currentStep / app.timeForOneOrbit) * 360 - app.earthRot
             app.marsRot += (app.currentStep / app.marsOrbitTime) * 360 - app.marsRot
-            print(app.timeForOneOrbit)
+            #print(app.timeForOneOrbit)
 
 def changeOrbitTime(app, newTime):
     if (newTime < 200): return None
