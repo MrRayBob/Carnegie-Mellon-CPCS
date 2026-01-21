@@ -1,6 +1,6 @@
 # CPCS
 
-The following instructions to install and run work for any CPCS Creative Task.
+The following instructions for installing and running work for any Carnegie Mellon Coding Creative Task. 
 
 ## Apps
 
@@ -9,12 +9,12 @@ The following instructions to install and run work for any CPCS Creative Task.
 - Creative Task #1 [Car Simulator](https://github.com/MrRayBob/Carnegie-Mellon-CPCS/blob/main/Car.py)
 - Creative Task #1 [Solar System Simulator](https://github.com/MrRayBob/Carnegie-Mellon-CPCS/blob/main/Solar%20System.py)
 
-## Prerequisites
+## Requirements 
 
 - Python 3.8+ installed
 - pip available
 
-## Install requirements
+## Install requiremented dependencies 
 
 Install the Python dependencies listed in `requirements.txt`:
 
@@ -43,9 +43,3 @@ To run `Solar System.py` (note the space in the filename):
 ```
 python3 "Solar System.py"
 ```
-
-## Files
-
-- `Car.py` — simple car simulator
-- `Solar System.py` — solar system app showing inner planets at realistic velocities.
-- `requirements.txt` — Python dependencies
