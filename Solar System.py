@@ -108,7 +108,7 @@ def redrawAll(app):
     x, y = getRadiusEndpoint(app.sunX, app.sunY, app.earthRad, app.earthRot)
     drawCircle(x,y,app.earthSize, fill=app.earthColor)
     
-     # Mars
+    # Mars
     drawCircle(app.sunX, app.sunY, app.marsRad, fill=None, border='gray', borderWidth=app.orbitLineWidth, dashes=True) # Path
     x, y = getRadiusEndpoint(app.sunX, app.sunY, app.marsRad, app.marsRot)
     drawCircle(x,y,app.marsSize, fill=app.marsColor)
