@@ -133,17 +133,18 @@ def takeStep(app):
             changeOrbitTime(app, app.timeForOneOrbit - app.changePerKeyPress)
         elif (app.downPressed):
             changeOrbitTime(app, app.timeForOneOrbit + app.changePerKeyPress)
-        else:
-            app.currentStep += 1
-            app.mercuryRot += (app.currentStep / app.mercuryOrbitTime) * 360 - app.mercuryRot
-            app.venusRot += (app.currentStep / app.venusOrbitTime) * 360 - app.venusRot
-            app.earthRot += (app.currentStep / app.timeForOneOrbit) * 360 - app.earthRot
-            app.marsRot += (app.currentStep / app.marsOrbitTime) * 360 - app.marsRot
-            #print(app.timeForOneOrbit)
+            
+        app.currentStep += 1
+        app.mercuryRot += (app.currentStep / app.mercuryOrbitTime) * 360 - app.mercuryRot
+        app.venusRot += (app.currentStep / app.venusOrbitTime) * 360 - app.venusRot
+        app.earthRot += (app.currentStep / app.timeForOneOrbit) * 360 - app.earthRot
+        app.marsRot += (app.currentStep / app.marsOrbitTime) * 360 - app.marsRot
+        #print(app.timeForOneOrbit)
 
 def changeOrbitTime(app, newTime):
     if (newTime < 200): return None
     if (newTime > 800): return None
+    app.currentStep = app.earthRot * (newTime / 360)
     app.timeForOneOrbit = newTime
 
     app.venusOrbitTime = app.timeForOneOrbit * 0.65
