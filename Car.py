@@ -13,6 +13,8 @@ def onAppStart(app):
     app.dBeingPressed = False
     app.wBeingPressed = False
     app.sBeingPressed = False
+    app.upBeingPressed = False
+    app.downBeingPressed = False
     
     app.timeOnTrack = 0
     app.timeTotal = 1
@@ -66,6 +68,12 @@ def takeStep(app):
         app.carRotation -= app.rotationChange
     elif app.dBeingPressed:
         app.carRotation += app.rotationChange
+    if app.upBeingPressed:
+        app.dm += 0.1
+    elif app.downBeingPressed:
+        app.dm -= 0.1
+        if app.dm < 0:
+            app.dm = 0
     if app.wBeingPressed:
         newPostition = getRadiusEndpoint(app.carX, app.carY, app.dm, -app.carRotation)
         if not checkPositionInisdeApp(app, newPostition):
@@ -98,9 +106,9 @@ def onKeyPress(app, key):
         case 's':
             app.sBeingPressed = True
         case 'up':
-            app.dm += 0.5
+            app.upBeingPressed = True
         case 'down':
-            app.dm -= 0.5
+            app.downBeingPressed = True
             
 def onKeyRelease(app, key):
     match key:
@@ -112,6 +120,10 @@ def onKeyRelease(app, key):
             app.wBeingPressed = False
         case 's':
             app.sBeingPressed = False
+        case 'up':
+            app.upBeingPressed = False
+        case 'down':
+            app.downBeingPressed = False
 
     
 def main():
