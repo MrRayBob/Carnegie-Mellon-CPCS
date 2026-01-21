@@ -129,5 +129,4 @@ def onKeyRelease(app, key):
 def main():
     runApp()
 
-if __name__ == "__main__":
-    main()
+main()
